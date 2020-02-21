@@ -110,29 +110,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         super.onActivityResult(requestCode, resultCode, data);
 
-        //추가 버튼을 이용해 결과를 받아오는 경우
-        if(requestCode == MODE_ADD && resultCode == RESULT_OK)
+        if (resultCode == RESULT_OK)
         {
-            Item itemToAdd = (Item) data.getParcelableExtra("saveItem");
-            memos.add(itemToAdd);
+            //추가 버튼을 이용해 결과를 받아오는 경우
+            if(requestCode == MODE_ADD)
+            {
+                Item itemToAdd = (Item) data.getParcelableExtra("saveItem");
+                memos.add(itemToAdd);
+            }
+            //리스트를 선택해 수정하는 경우
+            else if (requestCode ==MODE_AMEND)
+            {
+                Item itemToChange = (Item) data.getParcelableExtra("saveItem");
+                int position = data.getIntExtra("position",-1);
+                if(position!=-1)
+                {
+                    memos.set(position,itemToChange);
+                    Collections.sort(memos);
+                }
+                else
+                {
+                    Toast.makeText(this,"수정에 문제가 발생하였습니다",Toast.LENGTH_SHORT).show();
+                }
+            }
+            adapter.setItem(memos);
         }
-        //리스트를 선택해 수정하는 경우
-        else if (requestCode ==MODE_AMEND && resultCode ==RESULT_OK)
+        else
         {
-            Item itemToChange = (Item) data.getParcelableExtra("saveItem");
-            int position = data.getIntExtra("position",-1);
-            if(position!=-1)
-            {
-                memos.set(position,itemToChange);
-                Collections.sort(memos);
-            }
-            else
-            {
-                Toast.makeText(this,"수정에 문제가 발생하였습니다",Toast.LENGTH_SHORT).show();
-            }
+            Toast.makeText(this,"저장을 취소하셨습니다.",Toast.LENGTH_SHORT).show();
         }
-        adapter.setItem(memos);
-        mainListView.setAdapter(adapter);
+
+
+
     }
 
     //리스트 클릭시 수정 및 제거가 가능하게 하는 메소드
@@ -147,7 +156,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this,title+"가 제거되었습니다.",Toast.LENGTH_SHORT).show();
             memos.remove(position);
             adapter.setItem(memos);
-            mainListView.invalidateViews();
         }
         else // 아닌 경우는 수정으로 들어감
         {

@@ -70,6 +70,21 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     @Override
+    public void onBackPressed()
+    {
+        if(!buttonActivation)
+        {
+            finish();
+        }
+        else
+        {
+            Button imageAddButton = findViewById(R.id.imageAddButton);
+            buttonChanger(imageAddButton,buttonActivation);
+            buttonActivation = false;
+        }
+    }
+
+    @Override
     public void onClick(View v)
     {
         switch (v.getId())
