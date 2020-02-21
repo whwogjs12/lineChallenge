@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/listView"
+        android:layout_weight="10"
+        android:choiceMode="multipleChoice"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/addButton"
+            android:layout_weight="1"
+            android:text="@string/add"
+            android:layout_margin="5dp"
+            android:background="@drawable/round"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/mainBackButton"
+            android:layout_weight="1"
+            android:text="@string/back"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            android:background="@drawable/round"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/deleteButton"
+            android:layout_weight="1"
+            android:text="@string/delete"
+            android:layout_margin="5dp"
+            android:background="@drawable/round"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/deleteAllButton"
+            android:layout_weight="1"
+            android:text="@string/deleteAll"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            android:background="@drawable/round"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/title"
+        android:hint="@string/title"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:id="@+id/wrtingText"
+        android:hint="@string/editHint" />
+
+    <androidx.viewpager.widget.ViewPager
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:id="@+id/viewPager"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/URLLayout"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:id="@+id/writingURL"
+            android:hint="@string/URLHint" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/URLButton"
+            android:text="@string/search"
+            android:layout_margin="5dp"
+            android:background="@drawable/round"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/backButton"
+            android:layout_weight="1"
+            android:text="@string/back"
+            android:layout_margin="5dp"
+            android:background="@drawable/round"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageDeleteButton"
+            android:layout_weight="1"
+            android:text="@string/imageDelete"
+            android:layout_margin="5dp"
+            android:background="@drawable/round"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageAddButton"
+            android:layout_weight="1"
+            android:text="@string/imageAdd"
+            android:layout_margin="5dp"
+            android:background="@drawable/round"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/galleryButton"
+            android:layout_weight="1"
+            android:text="@string/gallery"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            android:background="@drawable/round"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/cameraButton"
+            android:layout_weight="1"
+            android:text="@string/camera"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            android:background="@drawable/round"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/saveButton"
+            android:layout_weight="1"
+            android:text="@string/save"
+            android:layout_margin="5dp"
+            android:background="@drawable/round"/>
+    </LinearLayout>
+
+
+</LinearLayout>
